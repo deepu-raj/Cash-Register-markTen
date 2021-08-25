@@ -1,29 +1,30 @@
 const billAmt = document.querySelector("#billAmount");
-var cash = document.querySelector("#cashamt");
-const checkbtn = document.querySelector("#check-btn");
+const cash = document.querySelector("#cashamt");
+const checkBtn = document.querySelector("#check-btn");
 const output = document.querySelectorAll(".output");
-var error = document.querySelectorAll(".errorMsg");
+const error = document.querySelector("#errorMsg");
 
 const denom = [2000,500,100,20,10,5,1];
-var input = billAmt.value-cash.value;
 
-function initReturn () {
-    if (cash.value<billAmt.value){
-        error.innerHtml = " Cash amount invalid."
-    } else { giveNoteDenom()
-
+function initReturn() {
+    const input = cash.value - billAmt.value;
+    if ((cash.value)<(billAmt.value)){
+        error.innerText = " Cash amount invalid.";
+    } else { 
+        giveNoteDenom(input);
     }
 }
-function giveNoteDenom () {
+
+function giveNoteDenom(input) {
     
-    for (i=0;i<=denom.length;i++){
-        var q = Math.floor(input/denom[i])
-        var r = input%denom[i]
-        input=r;
-        output[i].= q;
-           }
+    for (let i=0;i<=denom.length;i++){
+        const q = Math.floor(input/denom[i]);
+        input = input % denom[i];  
+        output[i].innerText = q;
+         }
     
 }
-checkbtn.addEventListener("click",initReturn);
+
+checkBtn.addEventListener("click",initReturn);
 
 
