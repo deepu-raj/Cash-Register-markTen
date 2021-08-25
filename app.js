@@ -1,18 +1,29 @@
-const denom = [2000,500,100,20,10,5,1];
-var input = 3000;
-console.log(denom.length);
-var result;
+const billAmt = document.querySelector("#billAmount");
+var cash = document.querySelector("#cashamt");
+const checkbtn = document.querySelector("#check-btn");
+const output = document.querySelectorAll(".output");
+var error = document.querySelectorAll(".errorMsg");
 
-for (i=0;i<=denom.length;i++){
+const denom = [2000,500,100,20,10,5,1];
+var input = billAmt.value-cash.value;
+
+function initReturn () {
+    if (cash.value<billAmt.value){
+        error.innerHtml = " Cash amount invalid."
+    } else { giveNoteDenom()
+
+    }
+}
+function giveNoteDenom () {
+    
+    for (i=0;i<=denom.length;i++){
         var q = Math.floor(input/denom[i])
         var r = input%denom[i]
-        const res = [];
-        /*if (() && r===0){
-            console.log (denom[i],"invalid input. Payment not made.") 
-            break;     
-        } */
-            input=r;
-            res[i] = q;
-         console.log(res[i],denom[i]);    
+        input=r;
+        output[i].= q;
+           }
+    
 }
+checkbtn.addEventListener("click",initReturn);
+
 

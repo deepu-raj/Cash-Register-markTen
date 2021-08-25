@@ -1,0 +1,29 @@
+body{
+    text-align:center;
+    margin:auto;
+}
+
+table{
+    text-align: center;
+    margin:auto;
+    width:50%;
+    margin-top: 1rem;
+    margin-bottom:1rem;
+}
+tbody{
+    border-collapse: collapse;
+}
+
+
+th,td{
+    border-style: solid;
+    margin:0;
+    width: 80px;
+    height:40px;
+    border-collapse: collapse;
+    padding: 0.4rem;
+    }
+.errorMsg {
+    margin:1rem;
+
+}

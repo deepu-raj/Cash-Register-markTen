@@ -3,6 +3,8 @@ var input = 3000;
 console.log(denom.length);
 var result;
 
+if 
+
 for (i=0;i<=denom.length;i++){
         var q = Math.floor(input/denom[i])
         var r = input%denom[i]
