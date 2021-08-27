@@ -19,7 +19,7 @@ function initReturn() {
 }
 
 function giveNoteDenom(input) {
-    
+    error.innerText="";
     for (let i=0;i<=denom.length;i++){
         const q = Math.trunc(input/denom[i]);
         input = input % denom[i];  
